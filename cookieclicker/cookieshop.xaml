@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cookieclicker"
         mc:Ignorable="d"
-        Title="cookieshop" Height="450" Width="800" Background="#FFEAFDFF">
+        Title="cookieshop" Height="450" Width="800">
+    <Window.Background>
+        <VisualBrush TileMode="Tile" Stretch="None" Viewport="0,0,170,170" ViewportUnits="Absolute">
+            <VisualBrush.Visual>
+                <Image Source="/Assetes/Backgrounds/paw_bg_light_blue.png"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

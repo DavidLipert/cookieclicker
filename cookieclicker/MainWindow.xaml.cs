@@ -20,6 +20,8 @@ namespace cookieclicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        cookieshop shop;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +31,19 @@ namespace cookieclicker
         {
             int pocet = 0;
             
+        }
+
+        private void shopButon_Click(object sender, RoutedEventArgs e)
+        {
+            if (shop == null)
+            {
+                shop = new cookieshop();
+            }
+
+            if (!shop.IsVisible)
+            {
+                shop.Show();
+            }
         }
     }
 }

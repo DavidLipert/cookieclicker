@@ -9,7 +9,7 @@
     <Grid>
         <Button Content="cookie" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" Width="88" Height="29"/>
         <Label Content="počet za klik" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top"/>
-        <Button Content="Obchod" HorizontalAlignment="Left" Margin="58,177,0,0" VerticalAlignment="Top" Height="40" Width="84"/>
+        <Button x:Name="shopButon" Content="Obchod" HorizontalAlignment="Left" Margin="58,177,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="shopButon_Click"/>
         <Label Content="Statistiky" HorizontalAlignment="Left" Margin="72,48,0,0" VerticalAlignment="Top"/>
         <Label Content="automatická produkce sušenek " HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,112,0,0" TextWrapping="Wrap" Text="TxtCislo" VerticalAlignment="Top" RenderTransformOrigin="0.545,0.974"/>

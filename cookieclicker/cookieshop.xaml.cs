@@ -27,7 +27,7 @@ namespace cookieclicker
 
         private void buyBetterCursor_Click(object sender, RoutedEventArgs e)
         {
-            
+            // TODO: Implement the logic to buy a better cursor
         }
 
         private void buyDoubleClick_Click(object sender, RoutedEventArgs e)
