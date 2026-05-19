@@ -24,10 +24,46 @@ namespace cookieclicker
             { 40000, 80 }, // Level 5: Price 40000, Power +80
         };
 
+
         public cookieshop(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            updateBetterCursorUI();
+            updateDoubleClickUI();
+        }
+        private void updateBetterCursorUI()
+        {
+            int currentLevel = mainWindow.getZaKlikLevel();
+            if (currentLevel >= betterCursorPricesAndPowers.GetLength(0))
+            {
+                betterCursorDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                betterCursorPrice.Text = "MAX!";
+            }
+            else
+            {
+                int nextPrice = betterCursorPricesAndPowers[currentLevel, 0];
+                int nextPower = betterCursorPricesAndPowers[currentLevel, 1];
+                betterCursorDescription.Text = $"Zvyšuje počet sušenek za kliknutí o {nextPower}.";
+                betterCursorPrice.Text = $"{nextPrice}P";
+            }
+        }
+
+        private void updateDoubleClickUI()
+        {
+            int currentLevel = mainWindow.getDoubleClickLevel();
+            if (currentLevel >= doubleClickPricesAndPowers.GetLength(0))
+            {
+                doubleClickDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                doubleClickPrice.Text = "MAX!";
+            }
+            else
+            {
+                int nextPrice = doubleClickPricesAndPowers[currentLevel, 0];
+                int nextPower = doubleClickPricesAndPowers[currentLevel, 1];
+                doubleClickDescription.Text = $"Zvyšuje počet sušenek za kliknutí o {nextPower}.";
+                doubleClickPrice.Text = $"{nextPrice}P";
+            }
         }
 
         private bool tryBuyForPrice(int price)
@@ -56,23 +92,9 @@ namespace cookieclicker
 
             if (!tryBuyForPrice(price)) { return; }
 
-            int nextLevel = currentLevel + 1;
-            
-            if (nextLevel >= betterCursorPricesAndPowers.GetLength(0))
-            {
-                betterCursorPrice.Text = "MAX!";
-            }
-            else
-            {
-                int nextPrice = betterCursorPricesAndPowers[nextLevel, 0];
-                int nextPower = betterCursorPricesAndPowers[nextLevel, 1];
-
-                betterCursorDescription.Text = $"Zvyšuje počet sušenek za kliknutí o {nextPower}.";
-                betterCursorPrice.Text = $"{nextPrice}P";
-            }
-
             mainWindow.pridatZaKlik(powerIncrease);
             mainWindow.levelUpZaKlik();
+            updateBetterCursorUI();
         }
 
         private void buyDoubleClick_Click(object sender, RoutedEventArgs e)
@@ -86,23 +108,9 @@ namespace cookieclicker
 
             if (!tryBuyForPrice(price)) { return; }
 
-            int nextLevel = currentLevel + 1;
-
-            if (nextLevel >= doubleClickPricesAndPowers.GetLength(0))
-            {
-                doubleClickPrice.Text = "MAX!";
-            }
-            else
-            {
-                int nextPrice = doubleClickPricesAndPowers[nextLevel, 0];
-                int nextPower = doubleClickPricesAndPowers[nextLevel, 1];
-
-                doubleClickPrice.Text = $"{nextPrice}P";
-                doubleClickDescription.Text = $"Zvyšuje počet sušenek za kliknutí o {nextPower}.";
-            }
-
             mainWindow.pridatZaKlik(powerIncrease);
-            mainWindow.levelUpZaKlik();
+            mainWindow.levelUpDoubleClick();
+            updateDoubleClickUI();
         }
 
         private void buyGrandma_Click(object sender, RoutedEventArgs e)

@@ -80,6 +80,7 @@ namespace cookieclicker
         }
 
         public void levelUpZaKlik() { zaKlikLevel++; }
+        public void levelUpDoubleClick() { doubleClickLevel++; }
         public void levelUpGrandma() { grandmaLevel++; }
         public void levelUpBakery() { bakeryLevel++; }
         public void levelUpFactory() { factoryLevel++; }
