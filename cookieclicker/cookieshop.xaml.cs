@@ -57,6 +57,9 @@ namespace cookieclicker
             this.mainWindow = mainWindow;
             updateBetterCursorUI();
             updateDoubleClickUI();
+            updateGrandmaUI();
+            updateBakeryUI();
+            updateFactoryUI();
         }
         private void updateBetterCursorUI()
         {
