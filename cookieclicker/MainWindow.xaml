@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label Content="počet" HorizontalAlignment="Left" Margin="364,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.398,1.279" Height="29" Width="41">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.827"/>
+                    <TranslateTransform X="-0.326" Y="-0.062"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button Content="cookie" HorizontalAlignment="Left" Margin="353,188,0,0" VerticalAlignment="Top" Click="Button_Click" Width="64"/>
+        <Label Content="počet za klik" HorizontalAlignment="Left" Margin="292,244,0,0" VerticalAlignment="Top"/>
+        <Button Content="Obchod" HorizontalAlignment="Left" Margin="72,320,0,0" VerticalAlignment="Top" Height="40" Width="84"/>
+        <Label Content="Statistiky" HorizontalAlignment="Left" Margin="656,89,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
