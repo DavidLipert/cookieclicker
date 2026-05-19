@@ -24,6 +24,7 @@ namespace cookieclicker
         private cookieshop? shop;
 
         private int cislo = 0;
+        public int getCislo() => cislo;
 
         private int zaklik = 1;
         private int zasekundu = 0;
@@ -52,13 +53,25 @@ namespace cookieclicker
 
         }
 
+        public bool decreaseCislo(int amount)
+        {
+            if (cislo >= amount)
+            {
+                cislo -= amount;
+                TxtCislo.Text = cislo.ToString();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void pridatZaKlik(int pocet)
         {
             zaklik += pocet;
             TxtZaKlik.Text = "Počet za kliknutí: " + zaklik.ToString();
         }
-
-        public void levelUpZaKlik() { zaKlikLevel++; }
 
         public void pridatZaSekundu(int pocet)
         {
@@ -66,6 +79,7 @@ namespace cookieclicker
             ZaSekunduLabel.Content = "Počet za sekundu: " + zasekundu.ToString();
         }
 
+        public void levelUpZaKlik() { zaKlikLevel++; }
         public void levelUpGrandma() { grandmaLevel++; }
         public void levelUpBakery() { bakeryLevel++; }
         public void levelUpFactory() { factoryLevel++; }

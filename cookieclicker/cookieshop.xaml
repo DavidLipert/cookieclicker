@@ -47,8 +47,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Lepší kurzor" Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="16" Margin="4,0,4,0" TextWrapping="Wrap"/>
-                <TextBlock Text="Zvyšuje počet sušenek za kliknutí o 1." Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,0" TextWrapping="Wrap"/>
-                <TextBlock Text="10P" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"/>
+                <TextBlock x:Name="betterCursorDescription" Text="Zvyšuje počet sušenek za kliknutí o 1." Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,4" TextWrapping="Wrap"/>
+                <TextBlock x:Name="betterCursorPrice" Text="10P" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"/>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyBetterCursor" Click="buyBetterCursor_Click" BorderBrush="#FF2BBF17"/>
             </Grid>
             <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Column="1">
@@ -63,8 +63,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="16" Margin="4,0,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="Dvojité kliknutí"/></TextBlock>
-                <TextBlock Text="Zvyšuje počet sušenek za kliknutí." Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,0" TextWrapping="Wrap"/>
-                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="0P"/></TextBlock>
+                <TextBlock x:Name="doubleClickDescription" Text="Zvyšuje počet sušenek za kliknutí." Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,4" TextWrapping="Wrap"/>
+                <TextBlock x:Name="doubleClickPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="0P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyDoubleClick" Click="buyDoubleClick_Click" BorderBrush="#FF2BBF17"/>
             </Grid>
             <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Column="2">
@@ -79,8 +79,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="16" Margin="4,0,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="Babička pekařka"/></TextBlock>
-                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,0" TextWrapping="Wrap"><Run Text="Přidá automatickou produkci"/><Run Language="en-gb" Text=": 1/s"/></TextBlock>
-                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="100 "/><Run Text="P"/></TextBlock>
+                <TextBlock x:Name="grandmaDescription" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,4" TextWrapping="Wrap"><Run Text="Přidá automatickou produkci"/><Run Language="en-gb" Text=": 1/s"/></TextBlock>
+                <TextBlock x:Name="grandmaPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="100 "/><Run Text="P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyGrandma" Click="buyGrandma_Click" BorderBrush="#FF2BBF17"/>
             </Grid>
             <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1">
@@ -95,8 +95,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="16" Margin="4,0,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="Malá pekárna"/></TextBlock>
-                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,0" TextWrapping="Wrap"><Run Text="Přidá automatickou produkci"/><Run Text=": 5/s"/></TextBlock>
-                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="00 "/><Run Text="P"/></TextBlock>
+                <TextBlock x:Name="bakeryDescription" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,4" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Přidá automatickou produkci"/><Run Text=": 5/s"/></TextBlock>
+                <TextBlock x:Name="bakeryPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="00 "/><Run Text="P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buySmallFactory" BorderBrush="#FF2BBF17" Click="buySmallFactory_Click"/>
             </Grid>
             <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1" Grid.Column="1">
@@ -111,12 +111,12 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="16" Margin="4,0,4,0" TextWrapping="Wrap"><Run Text="Továrna na "/><Run Language="en-gb" Text="paws"/></TextBlock>
-                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,0" TextWrapping="Wrap"><Run Text="Přidá automatickou produkci"/><Run Text=": 25/s"/></TextBlock>
-                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="2"/><Run Text="5"/><Run Text="00 "/><Run Text="P"/></TextBlock>
+                <TextBlock x:Name="factoryDescription" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Margin="4,4,4,4" TextWrapping="Wrap"><Run Text="Přidá automatickou produkci"/><Run Text=": 25/s"/></TextBlock>
+                <TextBlock x:Name="factoryPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="2"/><Run Text="5"/><Run Text="00 "/><Run Text="P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyFactory" BorderBrush="#FF2BBF17" Click="buyFactory_Click"/>
             </Grid>
 
         </Grid>
-
+        <Label Grid.Column="1" Content="Shop" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="22" Background="#00000000" Foreground="#FF0090FF"/>
     </Grid>
 </Window>
