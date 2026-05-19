@@ -13,7 +13,11 @@
     <Grid>
 
         <!-- Pozadí -->
-        <Border Background="#F4F9FF"/>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/Assetes/Backgrounds/mlem.jpg"/>
+            </Border.Background>
+        </Border>
 
         <!-- Statistiky -->
         <Border Background="#DCEEFF"
@@ -56,12 +60,14 @@
                 Height="140"
                 FontSize="24"
                 FontWeight="Bold"
-                Background="#2196F3"
                 Foreground="White"
                 BorderBrush="#1565C0"
                 BorderThickness="3"
                 Cursor="Hand"
                 Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Assetes/Backgrounds/paw_pat_bg_blue.png" Stretch="UniformToFill"/>
+            </Button.Background>
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
@@ -102,7 +108,7 @@
                 Margin="0,0,0,40">
 
             <Label x:Name="ZaSekunduLabel"
-                   Content="Tlapek za sekundu: 0"
+                   Content="Paws za sekundu: 0"
                    FontSize="16"
                    Foreground="#1565C0"
                    FontWeight="Bold"/>

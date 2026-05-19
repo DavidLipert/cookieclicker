@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Assetes\Backgrounds\paw_bg_light_blue.png" />
+    <None Remove="mlem.jpg" />
+    <None Remove="paw_pat_bg_blue.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assetes\Backgrounds\paw_bg_light_blue.png" />
+    <Resource Include="Assetes\Backgrounds\mlem.jpg" />
+    <Resource Include="Assetes\Backgrounds\paw_pat_bg_blue.png" />
   </ItemGroup>
 
 </Project>
