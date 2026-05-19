@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assetes\Backgrounds\paw_bg_light_blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assetes\Backgrounds\paw_bg_light_blue.png" />
+  </ItemGroup>
+
 </Project>
