@@ -23,7 +23,6 @@
             <RowDefinition Height="48"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="1" Content="Shop" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="22" Background="#00000000" Foreground="#FF0090FF"/>
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -117,6 +116,7 @@
             </Grid>
 
         </Grid>
-        <Label Grid.Column="1" Content="Shop" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="22" Background="#00000000" Foreground="#FF0090FF"/>
+        <Label Grid.Column="1" Content="Shop" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="32" Background="Transparent" Foreground="#FF0090FF"/>
+        <Label x:Name="pawsAmountLabel" Grid.Column="1" Content="0 Paws" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="22" Background="White" Padding="8,4,8,4" Foreground="#FF0090FF"/>
     </Grid>
 </Window>

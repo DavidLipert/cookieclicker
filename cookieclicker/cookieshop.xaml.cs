@@ -1,10 +1,17 @@
-﻿using System.Windows;
+﻿using System.Numerics;
+using System.Reflection.Emit;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace cookieclicker
 {
     public partial class cookieshop : Window
     {
         private MainWindow mainWindow;
+        private Canvas effectCanvas;
 
         private static readonly int[,] betterCursorPricesAndPowers =
         {
@@ -54,12 +61,36 @@ namespace cookieclicker
         public cookieshop(MainWindow mainWindow)
         {
             InitializeComponent();
+
+            effectCanvas = new Canvas
+            {
+                Background = Brushes.Transparent,
+                IsHitTestVisible = false
+            };
+
+            if (this.Content is Grid rootGrid)
+            {
+                Grid.SetColumn(effectCanvas, 0);
+                Grid.SetColumnSpan(effectCanvas, 3);
+                Grid.SetRow(effectCanvas, 0);
+                Grid.SetRowSpan(effectCanvas, 2);
+
+                rootGrid.Children.Add(effectCanvas);
+            }
+
             this.mainWindow = mainWindow;
+            
             updateBetterCursorUI();
             updateDoubleClickUI();
             updateGrandmaUI();
             updateBakeryUI();
             updateFactoryUI();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(.1);
+            timer.Tick += (sender, e) => pawsAmountLabel.Content = $"{mainWindow.getCislo()} Paws";
+            timer.Start();
+
         }
         private void updateBetterCursorUI()
         {
@@ -152,7 +183,14 @@ namespace cookieclicker
 
             if (balance >= price)
             {
-                return mainWindow.decreaseCislo(price);
+                bool result = mainWindow.decreaseCislo(price);
+
+                if (result)
+                {
+                    _ = spawnMinusPawsTextEffect(price);
+                }
+
+                return result;
             }
             else
             {
@@ -240,5 +278,49 @@ namespace cookieclicker
             mainWindow.levelUpFactory();
             updateFactoryUI();
         }
+        private async Task spawnMinusPawsTextEffect(int amount)
+        {
+            var lbl = new System.Windows.Controls.Label
+            {
+                Content = $"-{amount}P",
+                Foreground = System.Windows.Media.Brushes.Red,
+                FontSize = 16,
+                FontWeight = FontWeights.Bold,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+
+            Point initPos = Mouse.GetPosition(effectCanvas);
+
+            Canvas.SetLeft(lbl, initPos.X);
+            Canvas.SetTop(lbl, initPos.Y);
+
+            effectCanvas.Children.Add(lbl);
+
+            var Rand = new Random();
+
+            Vector2 vel = new Vector2(Rand.Next(-10, 11), Rand.Next(1, 11));
+
+            const float g = 0.5f;
+
+            const int fps = 60;
+            const int durationSec = 1;
+
+            int frames = fps * durationSec;
+
+            for (int i = 0; i < frames; i++) {
+                vel.Y -= g;
+
+                Canvas.SetLeft(lbl, Canvas.GetLeft(lbl) + vel.X);
+                Canvas.SetTop(lbl, Canvas.GetTop(lbl) - vel.Y);
+
+                lbl.Opacity = 1.0f - (i / (double)frames);
+
+                await Task.Delay(1000 / fps);
+            }
+
+            effectCanvas.Children.Remove(lbl);
+        }
     }
+
 }
