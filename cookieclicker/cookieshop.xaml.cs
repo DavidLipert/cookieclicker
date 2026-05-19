@@ -7,9 +7,12 @@ namespace cookieclicker
     /// </summary>
     public partial class cookieshop : Window
     {
-        public cookieshop()
+        private MainWindow mainWindow;
+
+        public cookieshop(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
         private bool checkPrice(int balance, int price)
@@ -27,7 +30,27 @@ namespace cookieclicker
 
         private void buyBetterCursor_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Implement the logic to buy a better cursor
+            int currentLevel = mainWindow.getZaKlikLevel();
+
+            switch (currentLevel)
+            {
+                case 0:
+                    mainWindow.pridatZaKlik(1);
+                    break;
+                case 1:
+                    mainWindow.pridatZaKlik(2);
+                    break;
+                case 2:
+                    mainWindow.pridatZaKlik(5); 
+                    break;
+                case 3:
+                    mainWindow.pridatZaKlik(10);
+                    break;
+                default:
+                    break;
+            }
+
+            mainWindow.levelUpZaKlik();
         }
 
         private void buyDoubleClick_Click(object sender, RoutedEventArgs e)

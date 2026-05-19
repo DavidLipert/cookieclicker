@@ -21,10 +21,25 @@ namespace cookieclicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        cookieshop shop;
+        private cookieshop? shop;
+
         private int cislo = 0;
-        private int zaklik = 10;
-        private int zasekundu = 1;
+
+        private int zaklik = 1;
+        private int zasekundu = 0;
+
+        private int zaKlikLevel = 0;
+        private int doubleClickLevel = 0;
+
+        private int grandmaLevel = 0;
+        private int bakeryLevel = 0;
+        private int factoryLevel = 0;
+
+        public int getZaKlikLevel() => zaKlikLevel;
+        public int getDoubleClickLevel() => doubleClickLevel;
+        public int getGrandmaLevel() => grandmaLevel;
+        public int getBakeryLevel() => bakeryLevel;
+        public int getFactoryLevel() => factoryLevel;
 
         public MainWindow()
         {
@@ -40,8 +55,20 @@ namespace cookieclicker
         public void pridatZaKlik(int pocet)
         {
             zaklik += pocet;
-            TxtZaKlik.Text = "Počet za kliknuti: " + zaklik.ToString();
+            TxtZaKlik.Text = "Počet za kliknutí: " + zaklik.ToString();
         }
+
+        public void levelUpZaKlik() { zaKlikLevel++; }
+
+        public void pridatZaSekundu(int pocet)
+        {
+            zasekundu += pocet;
+            ZaSekunduLabel.Content = "Počet za sekundu: " + zasekundu.ToString();
+        }
+
+        public void levelUpGrandma() { grandmaLevel++; }
+        public void levelUpBakery() { bakeryLevel++; }
+        public void levelUpFactory() { factoryLevel++; }
 
         private void casTik(object? sender, EventArgs e)
         {
@@ -57,37 +84,17 @@ namespace cookieclicker
             
 
         }
-
-        public void ZaSekunduLabel
         
         private void shopButon_Click(object sender, RoutedEventArgs e)
         {
             if (shop == null)
-
             {
-
-                shop = new cookieshop();
-
+                shop = new cookieshop(this);
                 shop.Closed += (s, args) => shop = null;
-
             }
 
-            if (shop.IsVisible)
-
-            {
-
-                shop.Activate();
-
-            }
-
-            else
-
-            {
-
-                shop.Show();
-
-            }
-
+            if (shop.IsVisible) { shop.Activate(); }
+            else { shop.Show(); }
         }
     }
 }
