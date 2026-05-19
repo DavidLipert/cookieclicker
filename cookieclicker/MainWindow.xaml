@@ -5,16 +5,108 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cookieclicker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        Background="White">
+
     <Grid>
-        <Button Content="cookie" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" Width="88" Height="29"/>
-        <Label Content="" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="shopButon" Content="Obchod" HorizontalAlignment="Left" Margin="58,177,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="shopButon_Click"/>
-        <Label Content="Statistiky" HorizontalAlignment="Left" Margin="72,48,0,0" VerticalAlignment="Top"/>
-        <Label Content="automatická produkce sušenek " HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" x:Name="ZaSekunduLabel"/>
-        <TextBlock HorizontalAlignment="Left" Margin="375,123,0,0" TextWrapping="Wrap" Text="TxtCislo" VerticalAlignment="Top" RenderTransformOrigin="0.545,0.974" x:Name="TxtCislo"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,162,0,0" TextWrapping="Wrap" Text="Počet za klik" VerticalAlignment="Top" x:Name="TxtZaKlik"
-/>
+
+        <!-- Pozadí -->
+        <Border Background="#F4F9FF"/>
+
+        <!-- Statistiky -->
+        <Border Background="#DCEEFF"
+                CornerRadius="12"
+                Width="180"
+                Height="120"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="30,30,0,0">
+
+            <StackPanel>
+                <Label Content="Statistiky"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="#1565C0"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,10"/>
+
+                <TextBlock x:Name="TxtCislo"
+                           Text="TxtCislo"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="#0D47A1"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock x:Name="TxtZaKlik"
+                           Text="Počet za klik"
+                           FontSize="14"
+                           Foreground="#1976D2"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Cookie Button -->
+        <Button Content="cookie"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="140"
+                Height="140"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="#2196F3"
+                Foreground="White"
+                BorderBrush="#1565C0"
+                BorderThickness="3"
+                Cursor="Hand"
+                Click="Button_Click">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="70"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Obchod -->
+        <Button x:Name="shopButon"
+                Content="Obchod"
+                HorizontalAlignment="Left"
+                Margin="58,300,0,0"
+                VerticalAlignment="Top"
+                Height="45"
+                Width="120"
+                FontSize="16"
+                FontWeight="Bold"
+                Background="#42A5F5"
+                Foreground="White"
+                BorderBrush="#1565C0"
+                BorderThickness="2"
+                Cursor="Hand"
+                Click="shopButon_Click"/>
+
+        <!-- Automatická produkce -->
+        <Border Background="#DCEEFF"
+                CornerRadius="10"
+                Padding="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,40">
+
+            <Label x:Name="ZaSekunduLabel"
+                   Content="automatická produkce sušenek "
+                   FontSize="16"
+                   Foreground="#1565C0"
+                   FontWeight="Bold"/>
+        </Border>
 
     </Grid>
 </Window>
