@@ -63,7 +63,7 @@ namespace cookieclicker
             int currentLevel = mainWindow.getZaKlikLevel();
             if (currentLevel >= betterCursorPricesAndPowers.GetLength(0))
             {
-                betterCursorDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                betterCursorDescription.Text = "Zvyšuje počet sušenek za kliknutí.";
                 betterCursorPrice.Text = "MAX!";
             }
             else
@@ -80,7 +80,7 @@ namespace cookieclicker
             int currentLevel = mainWindow.getDoubleClickLevel();
             if (currentLevel >= doubleClickPricesAndPowers.GetLength(0))
             {
-                doubleClickDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                doubleClickDescription.Text = "Zvyšuje počet sušenek za kliknutí.";
                 doubleClickPrice.Text = "MAX!";
             }
             else
@@ -97,7 +97,7 @@ namespace cookieclicker
             int currentLevel = mainWindow.getGrandmaLevel();
             if (currentLevel >= grandmaPricesAndPowers.GetLength(0))
             {
-                grandmaDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                grandmaDescription.Text = "Zvyšuje počet sušenek za kliknutí.";
                 grandmaPrice.Text = "MAX!";
             }
             else
@@ -114,7 +114,7 @@ namespace cookieclicker
             int currentLevel = mainWindow.getBakeryLevel();
             if (currentLevel >= bakeryPricesAndPowers.GetLength(0))
             {
-                bakeryDescription.Text = "Zvyšuje počet sušenek za kliknutí!";
+                bakeryDescription.Text = "Zvyšuje počet sušenek za kliknutí.";
                 bakeryPrice.Text = "MAX!";
             }
             else
