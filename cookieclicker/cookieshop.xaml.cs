@@ -187,6 +187,7 @@ namespace cookieclicker
 
                 if (result)
                 {
+                    mainWindow.addBoughtAmount(1);
                     _ = spawnMinusPawsTextEffect(price);
                 }
 
@@ -194,7 +195,7 @@ namespace cookieclicker
             }
             else
             {
-                MessageBox.Show("Nemáte dostatek paws!");
+                MessageBox.Show("Nemáte dostatek Paws!");
                 return false;
             }
         }

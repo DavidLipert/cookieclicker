@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cookieclicker"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="PawClicker (By: Lipert, Šefl)"
         Height="450"
         Width="800"
-        Background="White">
+        Background="White" Icon="/Assetes/Icons/paw_icon_blue.png">
 
     <Grid>
 
@@ -23,7 +23,7 @@
         <Border Background="#DCEEFF"
                 CornerRadius="12"
                 Width="180"
-                Height="120"
+                Height="174"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="30,30,0,0">
@@ -43,12 +43,25 @@
                            Foreground="#0D47A1"
                            HorizontalAlignment="Center"/>
 
+                <TextBlock x:Name="TxtCelkemKliknuti"
+                           Text="Celkem kliknutí: 0"
+                           HorizontalAlignment="Center"
+                           FontSize="14"
+                           Margin="0,10,0,0"
+                           Foreground="#1976D2"/>
+
                 <TextBlock x:Name="TxtZaKlik"
                            Text="Počet za kliknutí: 0"
                            FontSize="14"
                            Foreground="#1976D2"
                            HorizontalAlignment="Center"
                            Margin="0,10,0,0"/>
+
+                <TextBlock x:Name="TxtCelkemItemů"
+                           Text="Zakoupeno: 0"
+                           FontSize="14"
+                           Foreground="#1976D2"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Border>
 

@@ -1,18 +1,5 @@
-﻿using System.Reflection.Metadata;
-using System.Text;
-using System.Threading;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using System.Windows.Threading;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace cookieclicker
 {
@@ -25,6 +12,9 @@ namespace cookieclicker
 
         private int cislo = 0;
         public int getCislo() => cislo;
+
+        private int celkemKliknuto = 0;
+        private int celkemZakoupeno = 0;
 
         private int zaklik = 1;
         private int zasekundu = 0;
@@ -50,7 +40,12 @@ namespace cookieclicker
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += casTik;
             timer.Start();
+        }
 
+        public void addBoughtAmount(int amount)
+        {
+            celkemZakoupeno += amount;
+            TxtCelkemItemů.Text = $"Zakoupeno: {celkemZakoupeno}";
         }
 
         public bool decreaseCislo(int amount)
@@ -93,11 +88,10 @@ namespace cookieclicker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             cislo+= zaklik;
+            celkemKliknuto++;
             TxtCislo.Text = cislo.ToString();
-            
-
+            TxtCelkemKliknuti.Text = $"Celkem kliknutí: {celkemKliknuto}";
         }
         
         private void shopButon_Click(object sender, RoutedEventArgs e)

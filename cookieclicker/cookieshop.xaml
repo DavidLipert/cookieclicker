@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cookieclicker"
         mc:Ignorable="d"
-        Title="cookieshop" Height="450" Width="800">
+        Title="Shop" Height="450" Width="800" Icon="/Assetes/Icons/paw_icon_blue.png">
     <Window.Background>
         <VisualBrush TileMode="Tile" Stretch="None" Viewport="0,0,170,170" ViewportUnits="Absolute">
             <VisualBrush.Visual>
@@ -66,7 +66,7 @@
                 <TextBlock x:Name="doubleClickPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="0P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyDoubleClick" Click="buyDoubleClick_Click" BorderBrush="#FF2BBF17"/>
             </Grid>
-            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Column="2">
+            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Column="0" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -82,7 +82,7 @@
                 <TextBlock x:Name="grandmaPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="100 "/><Run Text="P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buyGrandma" Click="buyGrandma_Click" BorderBrush="#FF2BBF17"/>
             </Grid>
-            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1">
+            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -98,7 +98,7 @@
                 <TextBlock x:Name="bakeryPrice" Grid.Row="2" VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="16" Margin="4,4,4,0" TextWrapping="Wrap"><Run Language="en-gb" Text="5"/><Run Text="00 "/><Run Text="P"/></TextBlock>
                 <Button Grid.Column="1" Content="KOUPIT" Grid.Row="2" VerticalAlignment="Top" FontFamily="Rockwell Condensed" Background="#FF21FF57" Margin="4,4,4,0" Height="32" FontSize="16" x:Name="buySmallFactory" BorderBrush="#FF2BBF17" Click="buySmallFactory_Click"/>
             </Grid>
-            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1" Grid.Column="1">
+            <Grid Background="#FFCCE4FF" Margin="6,6,6,6" Grid.Row="1" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
