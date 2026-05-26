@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cookieclicker"
         mc:Ignorable="d"
-        Title="Shop" Height="450" Width="800" Icon="/Assetes/Icons/paw_icon_blue.png">
+        Title="Shop" Height="450" Width="800" Icon="/Assets/Icons/paw_icon_blue.png">
     <Window.Background>
         <VisualBrush TileMode="Tile" Stretch="None" Viewport="0,0,170,170" ViewportUnits="Absolute">
             <VisualBrush.Visual>
-                <Image Source="/Assetes/Backgrounds/paw_bg_light_blue.png"/>
+                <Image Source="/Assets/Backgrounds/paw_bg_light_blue.png"/>
             </VisualBrush.Visual>
         </VisualBrush>
     </Window.Background>

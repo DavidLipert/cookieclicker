@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using CookieClicker;
+using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -33,6 +34,8 @@ namespace cookieclicker
         public int getBakeryLevel() => bakeryLevel;
         public int getFactoryLevel() => factoryLevel;
 
+        private readonly MusicPlayer _musicPlayer = new MusicPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +44,15 @@ namespace cookieclicker
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += casTik;
             timer.Start();
+
+            Loaded += (_, __) => _musicPlayer.Play();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            _musicPlayer.Dispose();
+            base.OnClosed(e);
+        }
+
 
         public void addBoughtAmount(int amount)
         {
@@ -55,6 +66,7 @@ namespace cookieclicker
             {
                 cislo -= amount;
                 TxtCislo.Text = cislo.ToString();
+                _musicPlayer.PlayFancyClick();
                 return true;
             }
             else
@@ -93,6 +105,7 @@ namespace cookieclicker
             celkemKliknuto++;
             TxtCislo.Text = cislo.ToString();
             TxtCelkemKliknuti.Text = $"Celkem kliknutí: {celkemKliknuto}";
+            _musicPlayer.PlayPawClick();
         }
         
         private void shopButon_Click(object sender, RoutedEventArgs e)

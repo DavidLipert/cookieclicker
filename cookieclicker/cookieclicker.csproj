@@ -9,17 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assetes\Backgrounds\paw_bg_light_blue.png" />
-    <None Remove="Assetes\Icons\paw_icon_blue.png" />
+    <None Remove="Assets\Backgrounds\paw_bg_light_blue.png" />
+    <None Remove="Assets\Icons\paw_icon_blue.png" />
+    <None Remove="Assets\Sounds\Effects\fancyClick.wav" />
+    <None Remove="Assets\Sounds\Effects\pawClick.wav" />
+    <None Remove="Assets\Sounds\Music\meow.wav" />
     <None Remove="mlem.jpg" />
     <None Remove="paw_pat_bg_blue.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assetes\Backgrounds\paw_bg_light_blue.png" />
-    <Resource Include="Assetes\Backgrounds\mlem.jpg" />
-    <Resource Include="Assetes\Backgrounds\paw_pat_bg_blue.png" />
-    <Resource Include="Assetes\Icons\paw_icon_blue.png" />
+    <Resource Include="Assets\Backgrounds\paw_bg_light_blue.png" />
+    <Resource Include="Assets\Backgrounds\mlem.jpg" />
+    <Resource Include="Assets\Backgrounds\paw_pat_bg_blue.png" />
+    <Resource Include="Assets\Icons\paw_icon_blue.png" />
+    <Content Include="Assets\Sounds\Effects\pawClick.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sounds\Music\meow.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	<Content Include="Assets\Sounds\Effects\fancyClick.wav">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
 </Project>

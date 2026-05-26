@@ -8,14 +8,14 @@
         Title="PawClicker (By: Lipert, Šefl)"
         Height="450"
         Width="800"
-        Background="White" Icon="/Assetes/Icons/paw_icon_blue.png">
+        Background="White" Icon="/Assets/Icons/paw_icon_blue.png">
 
     <Grid>
 
         <!-- Pozadí -->
         <Border>
             <Border.Background>
-                <ImageBrush ImageSource="/Assetes/Backgrounds/mlem.jpg"/>
+                <ImageBrush ImageSource="/Assets/Backgrounds/mlem.jpg"/>
             </Border.Background>
         </Border>
 
@@ -92,7 +92,7 @@
                 Cursor="Hand"
                 Click="Button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/Assetes/Backgrounds/paw_pat_bg_blue.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Assets/Backgrounds/paw_pat_bg_blue.png" Stretch="UniformToFill"/>
             </Button.Background>
             
             
