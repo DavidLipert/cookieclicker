@@ -86,9 +86,14 @@ namespace cookieclicker
             updateBakeryUI();
             updateFactoryUI();
 
+            updateButtonAvailability();
+
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(.1);
-            timer.Tick += (sender, e) => pawsAmountLabel.Content = $"{mainWindow.getCislo()} Paws";
+            timer.Tick += (sender, e) => {
+                pawsAmountLabel.Content = $"{mainWindow.getCislo()} Paws";
+                updateButtonAvailability();
+            };
             timer.Start();
 
         }
@@ -188,6 +193,7 @@ namespace cookieclicker
                 if (result)
                 {
                     mainWindow.addBoughtAmount(1);
+                    updateButtonAvailability();
                     _ = spawnMinusPawsTextEffect(price);
                 }
 
@@ -198,6 +204,23 @@ namespace cookieclicker
                 MessageBox.Show("Nemáte dostatek Paws!");
                 return false;
             }
+        }
+
+        private void updateButtonAvailability()
+        {
+            int balance = mainWindow.getCislo();
+
+            buyBetterCursor.IsEnabled = balance >= betterCursorPricesAndPowers[Math.Min(mainWindow.getZaKlikLevel(), betterCursorPricesAndPowers.GetLength(0) - 1), 0];
+            buyDoubleClick.IsEnabled = balance >= doubleClickPricesAndPowers[Math.Min(mainWindow.getDoubleClickLevel(), doubleClickPricesAndPowers.GetLength(0) - 1), 0];
+            buyGrandma.IsEnabled = balance >= grandmaPricesAndPowers[Math.Min(mainWindow.getGrandmaLevel(), grandmaPricesAndPowers.GetLength(0) - 1), 0];
+            buySmallFactory.IsEnabled = balance >= bakeryPricesAndPowers[Math.Min(mainWindow.getBakeryLevel(), bakeryPricesAndPowers.GetLength(0) - 1), 0];
+            buyFactory.IsEnabled = balance >= factoryPricesAndPowers[Math.Min(mainWindow.getFactoryLevel(), factoryPricesAndPowers.GetLength(0) - 1), 0];
+
+            buyBetterCursor.Opacity = buyBetterCursor.IsEnabled ? 1.0 : 0.5;
+            buyDoubleClick.Opacity = buyDoubleClick.IsEnabled ? 1.0 : 0.5;
+            buyGrandma.Opacity = buyGrandma.IsEnabled ? 1.0 : 0.5;
+            buySmallFactory.Opacity = buySmallFactory.IsEnabled ? 1.0 : 0.5;
+            buyFactory.Opacity = buyFactory.IsEnabled ? 1.0 : 0.5;
         }
 
         private void buyBetterCursor_Click(object sender, RoutedEventArgs e)
