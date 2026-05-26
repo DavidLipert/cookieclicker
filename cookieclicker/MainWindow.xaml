@@ -23,12 +23,23 @@
         <Border Background="#DCEEFF"
                 CornerRadius="12"
                 Width="180"
-                Height="174"
+                Height="200"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="30,30,0,0">
 
             <StackPanel>
+                <Button Content="Reset hry" Height="27"
+                             FontSize="16"
+                                FontWeight="Bold"
+                                     Background="#42A5F5"
+                                     Foreground="White"
+                                     BorderBrush="#1565C0"
+                                     BorderThickness="2"
+                                     Cursor="Hand" Click="Button_Click_1"
+                                    
+                                             />          
+
                 <Label Content="Pawtistiky"
                        FontSize="18"
                        FontWeight="Bold"
@@ -62,6 +73,8 @@
                            FontSize="14"
                            Foreground="#1976D2"
                            HorizontalAlignment="Center"/>
+                
+                
             </StackPanel>
         </Border>
 
@@ -81,6 +94,8 @@
             <Button.Background>
                 <ImageBrush ImageSource="/Assetes/Backgrounds/paw_pat_bg_blue.png" Stretch="UniformToFill"/>
             </Button.Background>
+            
+            
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
@@ -111,6 +126,8 @@
                 BorderThickness="2"
                 Cursor="Hand"
                 Click="shopButon_Click"/>
+        
+        
 
         <!-- Automatická produkce -->
         <Border Background="#DCEEFF"
@@ -119,12 +136,14 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 Margin="0,0,0,40">
+        
 
             <Label x:Name="ZaSekunduLabel"
                    Content="Paws za sekundu: 0"
                    FontSize="16"
                    Foreground="#1565C0"
                    FontWeight="Bold"/>
+            
         </Border>
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Reflection.Emit;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace cookieclicker
@@ -104,6 +105,35 @@ namespace cookieclicker
 
             if (shop.IsVisible) { shop.Activate(); }
             else { shop.Show(); }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            cislo = 0;
+            celkemKliknuto = 0;
+            celkemZakoupeno = 0;
+
+            zaklik = 1;
+            zasekundu = 0;
+
+            zaKlikLevel = 0;
+            doubleClickLevel = 0;
+
+            grandmaLevel = 0;
+            bakeryLevel = 0;
+            factoryLevel = 0;
+
+            TxtCislo.Text = "" + cislo;
+            TxtCelkemKliknuti.Text = "Celkem kliknutí: " + celkemKliknuto;
+            TxtCelkemItemů.Text = "Zakoupeno: " + celkemZakoupeno;
+
+            TxtZaKlik.Text = "Počet za kliknutí: " + zaklik;
+            ZaSekunduLabel.Content = "Paws za sekundu: " + zasekundu;
+
+
+
+
+            MessageBox.Show("Hodnoty byly resetovány!");
         }
     }
 }
